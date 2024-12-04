@@ -1,7 +1,12 @@
 import './App.css';
+import { CreateUser } from './components/users/CreateUser';
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <CreateUser />
+    </>
+  );
 }
 
 export default App;
