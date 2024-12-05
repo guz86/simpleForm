@@ -1,4 +1,6 @@
 import { FormEvent } from 'react';
+import { Card } from '../ui/Card';
+import styles from './CreateUser.module.css';
 
 export const CreateUser = () => {
   const createUserHandler = (event: FormEvent<HTMLFormElement>) => {
@@ -6,14 +8,16 @@ export const CreateUser = () => {
   };
 
   return (
-    <form onSubmit={createUserHandler}>
-      <label htmlFor="name">Name</label>
-      <input id="name" type="text" />
+    <Card className={styles.input}>
+      <form onSubmit={createUserHandler}>
+        <label htmlFor="name">Name</label>
+        <input id="name" type="text" />
 
-      <label htmlFor="age">Age</label>
-      <input id="age" type="age" />
+        <label htmlFor="age">Age</label>
+        <input id="age" type="age" />
 
-      <button type="submit">Add user</button>
-    </form>
+        <button type="submit">Add user</button>
+      </form>
+    </Card>
   );
 };
