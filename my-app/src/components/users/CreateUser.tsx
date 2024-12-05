@@ -3,17 +3,25 @@ import { Card } from '../ui/Card';
 import styles from './CreateUser.module.css';
 import { Button } from '../ui/Button';
 
-export const CreateUser = () => {
+interface CreateUserProps {
+  onCreateUser: (name: string, age: number) => void;
+}
+
+export const CreateUser = ({ onCreateUser }: CreateUserProps) => {
   const [inputName, setInputName] = useState('');
   const [inputAge, setInputAge] = useState<number | ''>('');
 
   const createUserHandler = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
     if (inputName.trim().length === 0) {
       return;
     }
+    if (inputAge === '' || inputAge <= 0) {
+      return;
+    }
 
-    console.log(inputName, inputAge);
+    onCreateUser(inputName, inputAge);
     setInputName('');
     setInputAge('');
   };
