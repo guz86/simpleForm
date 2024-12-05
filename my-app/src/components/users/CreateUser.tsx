@@ -1,6 +1,7 @@
 import { FormEvent } from 'react';
 import { Card } from '../ui/Card';
 import styles from './CreateUser.module.css';
+import { Button } from '../ui/Button';
 
 export const CreateUser = () => {
   const createUserHandler = (event: FormEvent<HTMLFormElement>) => {
@@ -16,7 +17,7 @@ export const CreateUser = () => {
         <label htmlFor="age">Age</label>
         <input id="age" type="age" />
 
-        <button type="submit">Add user</button>
+        <Button type="submit">Add user</Button>
       </form>
     </Card>
   );
