@@ -14,9 +14,8 @@ export const ErrorModal: React.FC<ErrorModalProps> = ({
   onCloseModal,
 }) => {
   return (
-    <div>
+    <>
       <div className={styles.backdrop} onClick={onCloseModal}></div>
-      <div className={styles.backdrop}></div>
       <Card className={styles.modal}>
         <header className={styles.header}>
           <h2>{title}</h2>
@@ -28,6 +27,6 @@ export const ErrorModal: React.FC<ErrorModalProps> = ({
           <Button onClick={onCloseModal}>Close</Button>
         </footer>
       </Card>
-    </div>
+    </>
   );
 };

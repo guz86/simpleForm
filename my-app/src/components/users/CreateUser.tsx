@@ -78,7 +78,8 @@ export const CreateUser = ({ onCreateUser }: CreateUserProps) => {
             type="number"
             onChange={ageChangeHandler}
             value={inputAge}
-            min="1"
+            min="16"
+            max="99"
           />
 
           <Button type="submit">Add user</Button>
